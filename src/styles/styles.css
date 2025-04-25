@@ -1,0 +1,186 @@
+.title {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h2 {
+  letter-spacing: 1rem;
+}
+
+.cover {
+  height: 100vh;
+  animation: shrink 1.5s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes shrink {
+  0% {
+    height: 100vh;
+  }
+  90% {
+    height: 12vh;
+  }
+  98% {
+    height: 16vh;
+  }
+  100% {
+    height: 15vh;
+  }
+}
+
+.content {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  animation: show 1.5s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes show {
+  0% {
+    height: 0;
+    visibility: hidden;
+  }
+  90% {
+    height: 100vh;
+    visibility: visible;
+  }
+  98% {
+    height: 100vh;
+    visibility: visible;
+  }
+  100% {
+    height: 100vh;
+    visibility: visible;
+  }
+}
+
+.animated-text {
+  background: linear-gradient(90deg, black, rgb(200, 200, 200), black);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 5s linear infinite;
+}
+
+@keyframes move-bg {
+  0% {
+    background-position: 100% 0;
+  }
+  20%, 99% {
+    background-position: -40% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@counter-style custom-counter {
+  
+}
+
+ul {
+  list-style: none;
+  padding-left: 1em;
+  li {
+    margin: 4px 0;
+  }
+}
+
+ul li::before {
+  content: "□";
+  margin-right: 0.5em;
+}
+
+div.contact {
+  padding: 1rem 0;
+  width: 50px;
+  height: 100%;
+  transition: all 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  h1 {
+    writing-mode: vertical-lr;
+  }
+}
+
+strong {
+  font-weight: 600;
+}
+
+.disclaimer {
+  height: 0;
+  visibility: hidden;
+  animation: grow 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; /* Updated easing */
+  animation-delay: 2s;
+}
+
+@keyframes grow {
+  0% {
+    visibility: visible;
+  }
+  90% {
+    height: min-content;
+    visibility: visible;
+  }
+  100% {
+    height: min-content;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 1500px) {
+  .card-container {
+    flex-direction: column;
+    overflow: scroll;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  p, ul li {
+    font-size: 0.9rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  h2, h1 {
+    font-size: 1rem;
+  }
+  .content {
+    flex-direction: column;
+  }
+
+  div.contact {
+    flex-direction: row;
+    width: 100%;
+    height: min-content !important;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+    h1 {
+      writing-mode: horizontal-tb;
+    }
+    p {
+      transform: rotate(90deg);
+    }
+    .links {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
