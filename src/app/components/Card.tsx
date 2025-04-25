@@ -10,7 +10,7 @@ export default function Card({
   price: string;
 }) {
   return (
-    <div className="flex flex-col flex-1 justify-between border border-gray-400 p-12">
+    <div className="card flex flex-col flex-1 justify-between border border-gray-400 p-12">
       <div className="flex flex-col">
         <h1 className="text-4xl font-bold title">{title}</h1>
         <p className="mt-2">{description}</p>

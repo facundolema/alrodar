@@ -183,4 +183,12 @@ strong {
       align-items: center;
     }
   }
+
+  main {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 2rem;
+  }
 }
